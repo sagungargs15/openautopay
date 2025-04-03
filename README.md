@@ -131,9 +131,9 @@ plaintext
 ```
 
 # Next Steps
-1. Test: Add unit tests with mocked servers for L402, MCP, and Nostr.
-2. Expand: Implement error handling, retries, and logging.
-3. Deploy: Package as a PyPI module, npm package, or Rust crate.
+1. **Test**: Add unit tests with mocked servers for L402, MCP, and Nostr.
+2. **Expand**: Implement error handling, retries, and logging.
+3. **Deploy**: Package as a PyPI module, npm package, or Rust crate.
 
 
 
