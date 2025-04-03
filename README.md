@@ -6,6 +6,7 @@ A Python SDK for implementing the **Decentralised Agentic Mesh Payments Protocol
 
 ## Directory Structure
 
+```
 openautopay/
 ├── autopay-sdk/
 │   ├── __init__.py
@@ -16,7 +17,7 @@ openautopay/
 ├── examples/
 │   └── marketplace.py # Example usage
 └── README.md
-
+```
 
 ## Installation
 ```bash
