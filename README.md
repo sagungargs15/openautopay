@@ -46,9 +46,9 @@ print(f"Transaction completed: {result}")
 ```
 
 ## Features
- i. L402-based payments via Lightning Network
- ii. MCP context fetching for AI-driven decisions
- iii. Nostr communication for decentralized messaging
+ a. L402-based payments via Lightning Network
+ b. MCP context fetching for AI-driven decisions
+ c. Nostr communication for decentralized messaging
 
 # More Details
 OpenAutoPay is a groundbreaking open-source Free and Open Source Software (FOSS) code repository designed to redefine Agentic AI payments. By integrating the Lightning Network’s L402 protocol, the Model Context Protocol (MCP), and the Nostr protocol, OpenAutoPay empowers developers to create autonomous, AI-driven payment systems that are secure, scalable, and interoperable across decentralized networks. This repository provides a robust framework for AI agents to handle microtransactions, access external data and tools, and communicate in a decentralized ecosystem—all while leveraging the speed and efficiency of the Lightning Network.
@@ -75,44 +75,44 @@ DAMPP enables autonomous AI agents to perform secure, context-aware payments and
    **Mechanism**: Utilizes L402’s HTTP-based payment flow, where AI agents present a Lightning Network payment preimage and macaroon to access services or data.
   **Enhancement**: Extends L402 with dynamic pricing metadata, allowing agents to negotiate payment terms based on context (e.g., resource demand or service priority).
   **Workflow**:
-    i. Agent requests a service via a DAMPP endpoint.
-    ii. Service provider responds with an L402 challenge (payment hash + macaroon).
-    iii. Agent completes the payment over Lightning Network and gains access.
+    a. Agent requests a service via a DAMPP endpoint.
+    b. Service provider responds with an L402 challenge (payment hash + macaroon).
+    c. Agent completes the payment over Lightning Network and gains access.
 
 ### 2. Context Layer (MCP-Based)
   **Mechanism**: Adopts MCP’s client-server model to connect AI agents to external data sources (e.g., APIs, databases, or file systems) and tools.
   **Enhancement**: Introduces a “Context Request Payload” (CRP) that encapsulates payment-related data (e.g., transaction purpose, budget constraints) alongside traditional MCP context queries.
   **Workflow**:
-    i. Agent sends a CRP to a DAMPP server specifying the data/tools needed.
-    ii. Server authenticates the request (via L402) and returns structured context data.
-    iii. Agent processes the data to inform payment decisions or actions.
+    a. Agent sends a CRP to a DAMPP server specifying the data/tools needed.
+    b. Server authenticates the request (via L402) and returns structured context data.
+    c. Agent processes the data to inform payment decisions or actions.
 
 ### 3. Communication Layer (Nostr-Based)
   **Mechanism**: Leverages Nostr’s public-key-based messaging for secure, decentralized communication between agents, users, and services.
   **Enhancemen**t: Adds a “Payment Event Type” to Nostr’s event structure, enabling agents to broadcast payment intents, confirmations, or disputes to the network.
   **Workflow**:
-    i. Agent generates a signed Nostr event (e.g., "Payment Intent: 500 sats for API access").
-    ii. Event is relayed across Nostr nodes to the service provider.
-    iii. Provider responds with a confirmation event after payment is verified via L402.
+    a. Agent generates a signed Nostr event (e.g., "Payment Intent: 500 sats for API access").
+    b. Event is relayed across Nostr nodes to the service provider.
+    c. Provider responds with a confirmation event after payment is verified via L402.
 
 # Protocol Flow
-  i. Initialization: An AI agent identifies a task requiring payment, data, and communication (e.g., purchasing API access to fetch market data).
-  ii. Context Fetch: The agent sends a CRP to a DAMPP server via MCP, authenticated by an L402 macaroon, to retrieve necessary context (e.g., API pricing).
-  iii. Payment Execution: Using L402, the agent completes a Lightning Network payment based on the retrieved context.
-  iv. Communication: The agent broadcasts a Nostr Payment Event to confirm the transaction, logged by the network for transparency.
-  v. Action: The agent accesses the service/data and completes its task, with all interactions standardized under DAMPP.
+  a. Initialization: An AI agent identifies a task requiring payment, data, and communication (e.g., purchasing API access to fetch market data).
+  b. Context Fetch: The agent sends a CRP to a DAMPP server via MCP, authenticated by an L402 macaroon, to retrieve necessary context (e.g., API pricing).
+  c. Payment Execution: Using L402, the agent completes a Lightning Network payment based on the retrieved context.
+  d. Communication: The agent broadcasts a Nostr Payment Event to confirm the transaction, logged by the network for transparency.
+  e. Action: The agent accesses the service/data and completes its task, with all interactions standardized under DAMPP.
 
 # Key Features
-  i. Interoperability: Seamlessly integrates L402, MCP, and Nostr, allowing existing implementations to adopt DAMPP incrementally.
-  ii. Security: Combines L402’s macaroon-based authentication, MCP’s OAuth 2.1 subset, and Nostr’s cryptographic signatures for end-to-end trust.
-  iii. Scalability: Leverages Lightning Network for high-volume microtransactions and Nostr’s relay system for distributed communication.
-  iv. Agent Autonomy: Enables AI agents to negotiate, pay, and communicate without human oversight, using context-aware decision-making.
+  a. Interoperability: Seamlessly integrates L402, MCP, and Nostr, allowing existing implementations to adopt DAMPP incrementally.
+  b. Security: Combines L402’s macaroon-based authentication, MCP’s OAuth 2.1 subset, and Nostr’s cryptographic signatures for end-to-end trust.
+  c. Scalability: Leverages Lightning Network for high-volume microtransactions and Nostr’s relay system for distributed communication.
+  d. Agent Autonomy: Enables AI agents to negotiate, pay, and communicate without human oversight, using context-aware decision-making.
 
 # Example Use Case
 An AI agent managing a decentralized marketplace uses DAMPP to:
-  i. Query product pricing via MCP.
-  ii. Pay for the listing fee via L402 over Lightning Network.
-  iii. Notify the seller and buyer via Nostr events, all in a single, standardized flow.
+  a. Query product pricing via MCP.
+  b. Pay for the listing fee via L402 over Lightning Network.
+  c. Notify the seller and buyer via Nostr events, all in a single, standardized flow.
 
 # Implementation Notes
 DAMPP servers can be built as extensions to existing MCP servers, with added L402 payment gateways and Nostr relay compatibility.
@@ -131,9 +131,9 @@ plaintext
 ```
 
 # Next Steps
-i. Test: Add unit tests with mocked servers for L402, MCP, and Nostr.
-ii. Expand: Implement error handling, retries, and logging.
-iii. Deploy: Package as a PyPI module, npm package, or Rust crate.
+a. Test: Add unit tests with mocked servers for L402, MCP, and Nostr.
+b. Expand: Implement error handling, retries, and logging.
+c. Deploy: Package as a PyPI module, npm package, or Rust crate.
 
 
 
