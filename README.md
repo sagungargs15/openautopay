@@ -4,6 +4,20 @@ OpenAutoPay: Mesh of L402, MCP, and Nostr will revolutionize Agentic AI payments
 ## OpenAutoPay SDK
 A Python SDK for implementing the **Decentralised Agentic Mesh Payments Protocol (DAMPP)**, integrating L402 (Lightning Network), MCP (Model Context Protocol), and Nostr.
 
+## Directory Structure
+
+openautopay/
+├── autopay-sdk/
+│   ├── __init__.py
+│   ├── payments.py    # L402 payment handling
+│   ├── context.py     # MCP context fetching
+│   ├── comms.py       # Nostr communication
+│   └── sdk.py         # Main SDK class
+├── examples/
+│   └── marketplace.py # Example usage
+└── README.md
+
+
 ## Installation
 ```bash
 pip install requests pynostr lnurl cryptography
