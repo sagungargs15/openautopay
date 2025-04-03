@@ -1,6 +1,40 @@
 # OpenAutoPay
 OpenAutoPay: Mesh of L402, MCP, and Nostr will revolutionize Agentic AI payments. It will empower developers to build autonomous, AI-driven payment systems that are secure, scalable, and interoperable across decentralized networks
 
+## OpenAutoPay SDK
+A Python SDK for implementing the **Decentralised Agentic Mesh Payments Protocol (DAMPP)**, integrating L402 (Lightning Network), MCP (Model Context Protocol), and Nostr.
+
+## Installation
+```bash
+pip install requests pynostr lnurl cryptography
+```
+
+## Usage
+See examples/marketplace.py for a sample implementation.
+
+```python
+
+from autopay.sdk import OpenAutoPaySDK
+
+# Mock keys and URLs
+WALLET_KEY = "mock_lightning_wallet_key"
+NOSTR_KEY = "your_nostr_private_key_hex"  # 64-char hex string
+SERVICE_URL = "http://marketplace.example.com/api/data"
+MCP_SERVER = "http://mcp.example.com"
+
+# Initialize SDK
+sdk = OpenAutoPaySDK(WALLET_KEY, NOSTR_KEY, MCP_SERVER)
+
+# Process a transaction
+result = sdk.process_transaction(SERVICE_URL, "Get marketplace pricing")
+print(f"Transaction completed: {result}")
+```
+
+## Features
+ i. L402-based payments via Lightning Network
+ ii. MCP context fetching for AI-driven decisions
+ iii. Nostr communication for decentralized messaging
+
 # More Details
 OpenAutoPay is a groundbreaking open-source Free and Open Source Software (FOSS) code repository designed to redefine Agentic AI payments. By integrating the Lightning Network’s L402 protocol, the Model Context Protocol (MCP), and the Nostr protocol, OpenAutoPay empowers developers to create autonomous, AI-driven payment systems that are secure, scalable, and interoperable across decentralized networks. This repository provides a robust framework for AI agents to handle microtransactions, access external data and tools, and communicate in a decentralized ecosystem—all while leveraging the speed and efficiency of the Lightning Network.
 
@@ -80,6 +114,11 @@ plaintext
   "signature": "<cryptographic-signature>"
 }
 ```
+
+# Next Steps
+i. Test: Add unit tests with mocked servers for L402, MCP, and Nostr.
+ii. Expand: Implement error handling, retries, and logging.
+iii. Deploy: Package as a PyPI module, npm package, or Rust crate.
 
 
 
